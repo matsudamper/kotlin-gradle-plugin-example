@@ -117,9 +117,11 @@ build.gradle.ktsのimplementationClassに"${package名}.${ファイル名の先�
 
 ## User
 使用する側は以下のように追加するだけ。  
+```kotlin
 plugins {
     id("kotlin-gradle-plugin-example") version "1.0"
 }
+```
 
 これでタスクが実行できる。  
 ```
