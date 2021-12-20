@@ -70,6 +70,11 @@ class MyPlugin : Plugin<Project> {
 apply<MyPlugin>()
 ```
 
+### 末尾にPluginを付けた理由
+build.gradle.ktsのimplementationClassに"${package名}.${ファイル名の先頭}Plugin" を付けた理由。  
+
+`java-gradle-plugin` を使用してjarファイルを作成した場合、jar(zip)をunzipしてみるとPluginが末尾に付いている。その為、末尾にPluginを付けた。末尾にPluginが付く理由は不明。  
+
 ### Publish
 ローカルに配布する。  
 ```
@@ -111,11 +116,6 @@ apply<MyPlugin>()
     - kotlin-gradle-plugin-example-1.0.module
     - kotlin-gradle-plugin-example-1.0.pom
   - maven-metadata-local.xml
-
-### Description
-build.gradle.ktsのimplementationClassに"${package名}.${ファイル名の先頭}Plugin" を付けた理由。  
-
-`java-gradle-plugin` を使用してjarファイルを作成した場合、jar(zip)をunzipしてみるとPluginが末尾に付いている。その為、末尾にPluginを付けた。末尾にPluginが付く理由は不明。  
 
 ## User
 使用する側は以下のように追加するだけ。  
