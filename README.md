@@ -75,15 +75,17 @@ apply<MyPlugin>()
 ```
 ./gradlew publishToMavenLocal
 ```
-`~/.m2/repository/` の中を見てみる。グループにすると2つのものが見つかる
 
-1つはPluginファイル  
-kotlin-gradle-plugin-example/kotlin-gradle-plugin-example.gradle.plugin/
-  - 1.0/kotlin-gradle-plugin-example.gradle.plugin-1.0.pom
+`~/.m2/repository/` の中を見てみる。グループにすると2つのものが見つかる1つはPlugin定義、もう1つは実体であった。  
+
+#### Plugin定義 
+- kotlin-gradle-plugin-example/kotlin-gradle-plugin-example.gradle.plugin/
+  - 1.0
+    - kotlin-gradle-plugin-example.gradle.plugin-1.0.pom
   - maven-metadata-local.xml
 
-`maven-metadata-local.xml`  
 実体ファイルへの参照しか無い。  
+`maven-metadata-local.xml`  
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -102,8 +104,8 @@ kotlin-gradle-plugin-example/kotlin-gradle-plugin-example.gradle.plugin/
 </project>
 ```
 
-もう1つは実体  
-net/matsudamper/kotlin-gradle-plugin-example/
+#### 実体
+- net/matsudamper/kotlin-gradle-plugin-example/
   - 1.0/
     - kotlin-gradle-plugin-example-1.0.jar
     - kotlin-gradle-plugin-example-1.0.module
